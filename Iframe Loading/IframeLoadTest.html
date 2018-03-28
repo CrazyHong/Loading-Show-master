@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title></title>
+    <style>
+        #Test{            
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="testdiv">
+        <iframe id="Test" src="http://www.baidu.com" onload="$navigation.reset('testdiv')"></iframe>
+    </div>
+    <input type="button" class="switchsrc" value="click me" />
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+    $test=(function(){
+        $navigation=(function(){
+            return{
+
+                reset:function(id){
+
+                    alert(id+"success!");
+                }
+            }
+        })(),
+
+
+        $(function(){            
+            $(".switchsrc").on("click",function(){
+                $("#Test").attr("src","http://www.bing.com");
+            })
+        });
+
+    })();        
+    </script>
+</body>
+
+</html>
